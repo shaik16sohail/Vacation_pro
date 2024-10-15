@@ -22,6 +22,9 @@ a{
 .fs-7{
   font-size:19px;
 }
+.fs-8{
+  font-size: 17px;
+}
 .fs-9{
   font-size: 14px;
 }
@@ -39,4 +42,8 @@ a{
 .header{
   position: sticky;
   top: 0;
+}
+.founder-img{
+  border-radius: 50%;
+  width: 80%;
 }
