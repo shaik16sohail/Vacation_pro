@@ -48,3 +48,32 @@ a{
   border-radius: 50%;
   width: 80%;
 }
+#supportWrapper{
+  display: flex;
+  justify-content: space-between;
+  padding-top: 3rem;
+  padding-left: 2.2rem;
+  padding-right: 2.2rem;
+}
+.supportHero a{
+  text-decoration: underline;
+  color: white;
+}
+input{
+  padding: 20px 20px;
+  width: 100%;
+  font-size: 17px;
+  border-radius: 10px;
+  border: none;
+}
+.underline {
+  text-decoration: underline;
+  word-spacing: 0.5em; /* Adjust spacing as needed */
+}
+
+a {
+  text-decoration: none; /* Removes default underline */
+}
+.supportHero ol{
+  line-height: 1.8rem;
+}
