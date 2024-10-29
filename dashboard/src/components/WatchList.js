@@ -45,9 +45,9 @@ const WatchListItem=({stock})=>{
         <p className={stock.isDown?"down":"up"}>{stock.name}</p>
         <div className="itemInfo">
         <span className="percent">{stock.percent}</span>
-        {stock.isDown?
-          <keyboardArrowDown className='down' />
-        :<keyboardArrowUp className='up' />}
+        {stock.isDown?(<keyboardArrowDown className='down' />)
+          
+        :(<keyboardArrowUp className='up' />)}
         <span className="price">{stock.price}</span>
         </div>
       </div>
