@@ -2,9 +2,15 @@ import React from "react";
 import {Link} from "react-router-dom";
 import {useState} from "react";
 import { useCookies } from "react-cookie";
+import { useUser } from "../UserContext";
 const Menu = () => {
   const [cookies, setCookie, removeCookie] = useCookies(["token"]);
-
+  const [isBoxVisible, setIsBoxVisible] = useState(false);
+    const handleDivClick = () => {
+        setIsBoxVisible(!isBoxVisible); // Toggle visibility
+    };
+  // const user=useUser();
+  const { user, email } = useUser();
   const handleLogout = () => {
     // Remove the token cookie
     removeCookie("token", { path: "/" });
@@ -71,9 +77,34 @@ const Menu = () => {
           </li>
         </ul>
         <hr />
-        <div className="profile" onClick={handleLogout}>
+        <div>
+            {/* <div onClick={handleDivClick} style={{ cursor: 'pointer', padding: '10px' }}>
+                {user}
+            </div> */}
+            <div className="profile" onClick={handleDivClick} >
           <div className="avatar">ZU</div>
-          <p className="username">USERID</p>
+          <p className="username">{user}</p>
+        </div>
+
+        {isBoxVisible && (
+                <div style={{
+                    position: 'fixed',
+                    top: '70px',
+                    right: '20px',
+                    padding: '10px',
+                    // border: '1px solid black',
+                    borderRadius: '15px',
+                    width: '150px',
+                    backgroundColor: '#E0E0E0',
+                    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
+                    zIndex: 1000, // Ensures the dialog is above other elements
+                }}>
+                    {/* <p style={{ margin: '0 0 10px 0' }}>Are you sure you want to log out?</p> */}
+                    <p style={{fontSize:"15px"}}>{email}</p>
+                    <button onClick={handleLogout}>Logout</button>
+                    {/* <button onClick={() => setIsBoxVisible(false)} style={{ marginLeft: '10px' }}>Cancel</button> */}
+                </div>
+            )}
         </div>
       </div>
     </div>
