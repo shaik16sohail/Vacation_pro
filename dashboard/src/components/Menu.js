@@ -1,7 +1,17 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import {useState} from "react";
+import { useCookies } from "react-cookie";
 const Menu = () => {
+  const [cookies, setCookie, removeCookie] = useCookies(["token"]);
+
+  const handleLogout = () => {
+    // Remove the token cookie
+    removeCookie("token", { path: "/" });
+    // Redirect to the login page on the landing page app
+    window.location.replace("http://localhost:3000/login"); // Adjust URL if needed
+  };
+
     const[selectedMenu,setSelectedMenu]=useState(0);
     const[isProfileDropdownOpen,setIsProfileDropdownOpen]=useState(false);
     const handleMenuClick=(index)=>{
@@ -61,7 +71,7 @@ const Menu = () => {
           </li>
         </ul>
         <hr />
-        <div className="profile" onClick={<handleProfileClick/>}>
+        <div className="profile" onClick={handleLogout}>
           <div className="avatar">ZU</div>
           <p className="username">USERID</p>
         </div>
