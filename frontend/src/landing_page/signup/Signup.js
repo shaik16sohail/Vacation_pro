@@ -41,13 +41,10 @@ const Signup = () => {
       );
       const { success, message } = data;
       if (success) {
-        handleSuccess(message);
         setTimeout(() => {
             window.location.replace("http://localhost:3001/");
         }, 1000);
-      } else {
-        handleError(message);
-      }
+      } 
     } catch (error) {
       console.log(error);
     }
@@ -58,8 +55,8 @@ const Signup = () => {
       username: "",
     });
   };
-
   return (
+    <div className="overAll">
     <div className="form_container">
       <h2>Signup Account</h2>
       <form onSubmit={handleSubmit}>
@@ -99,6 +96,7 @@ const Signup = () => {
         </span>
       </form>
       <ToastContainer />
+    </div>
     </div>
   );
 };

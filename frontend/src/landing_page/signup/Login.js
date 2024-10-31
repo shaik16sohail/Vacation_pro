@@ -40,15 +40,14 @@ const Login = () => {
       console.log("data:",data);
       const { success, message,token } = data;
       if (success) {
-        handleSuccess(message);
-        setTimeout(() => {
-            console.log("Cookies after login:", document.cookie);
-            console.log(token);
-            window.location.replace("http://localhost:3001/");
-        }, 1000);
-      } else {
-        handleError(message);
-      }
+        window.location.replace("http://localhost:3001/");
+        console.log("Cookies after login:", document.cookie);
+        console.log(token);
+        // setTimeout(() => {
+            
+            
+        // }, 1000);
+      } 
     } catch (error) {
       console.log(error);
     }
@@ -60,6 +59,7 @@ const Login = () => {
   };
 
   return (
+    <div className="overAll">
     <div className="form_container">
       <h2>Login Account</h2>
       <form onSubmit={handleSubmit}>
@@ -89,6 +89,7 @@ const Login = () => {
         </span>
       </form>
       <ToastContainer />
+    </div>
     </div>
   );
 };
