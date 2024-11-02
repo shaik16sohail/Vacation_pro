@@ -25,20 +25,21 @@ body {
   justify-content: center;
   align-items: center;
   padding: 5rem 15rem;
- 
-  background: linear-gradient(
+ background-color: #387ed1;
+  /* background: linear-gradient(
     90deg,
     rgba(2, 0, 36, 1) 0%,
     rgba(143, 187, 204, 1) 35%,
     #387ed1 100%
-  );
+  ); */
 }
 
 .form_container {
   border: 1px solid grey;
   border-radius: 30px;
-  /* background-color: rgba(91, 112, 131, 0.4);; */
   background-color: white;
+  /* background-color: rgba(91, 112, 131, 0.4);; */
+  
   padding: 2rem 3rem;
   border-radius: 0.5rem;
   width: 100%;
